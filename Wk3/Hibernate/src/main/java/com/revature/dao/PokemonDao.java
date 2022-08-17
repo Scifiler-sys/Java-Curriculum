@@ -21,6 +21,8 @@ import org.hibernate.Transaction;
 public class PokemonDao {
     
     // This method will add a row in our pokemon table
+    // Note: you cannot see a single query statement anywhere written, Hibernate did it for us already
+    // you also cannot see any JDBC related objects/classes since Hibernate uses them already
     public int insert(Pokemon poke){
 
         //Grabs our existing connection to the database
@@ -33,7 +35,6 @@ public class PokemonDao {
 
         //saves the pokemon object into a row in a pokemon table
         int primarykey = (int) ses.save(poke);
-
 
         // commits the transaction
         tx.commit();

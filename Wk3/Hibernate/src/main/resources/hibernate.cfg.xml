@@ -17,7 +17,7 @@
         <property name = "hibernate.connection.url">
             jdbc:postgresql://sp-mn-db-demo-test.cvtq9j4axrge.us-east-1.rds.amazonaws.com/postgres
         </property>
-
+        
         <property name = "hibernate.connection.username">
             postgres
         </property>

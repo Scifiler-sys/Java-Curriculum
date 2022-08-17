@@ -24,6 +24,7 @@ public class HibernateUtil {
                     .buildSessionFactory();
 
     // Similar to getConnection() in JDBC
+    // Unlike what we did before, this was simplified down to a single method and it takes care of connecting to db
     public static Session getSession(){
         if (ses == null) {
             ses = sf.openSession();
