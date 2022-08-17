@@ -1,0 +1,46 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- This will indicate what type of database engine this hibernate will point to -->
+        <property name = "hibernate.dialect">
+            org.hibernate.dialect.PostgreSQLDialect
+        </property>
+
+        <!-- Indicate the Driver class of the postgresql JDBC -->
+        <property name = "hibernate.connection.driver_class">
+            org.postgresql.Driver
+        </property>
+
+        <!-- Database credentials needed -->
+        <property name = "hibernate.connection.url">
+            jdbc:postgresql://sp-mn-db-demo-test.cvtq9j4axrge.us-east-1.rds.amazonaws.com/postgres
+        </property>
+
+        <property name = "hibernate.connection.username">
+            postgres
+        </property>
+
+        <property name = "hibernate.connection.password">
+            Password123
+        </property>
+
+        <!-- Further configuration for Hibernate-->
+        <!-- Limits the number of connections-->
+        <property name="hibernate.connection.pool_size">10</property>
+
+        <!-- Allows hibernate to create our database -->
+        <!-- create - will drop tables and re-create the entire database each time -->
+        <!-- update - will just update existing tables as well as create new ones but not drop anything -->
+        <!-- validate - best for production (When everything is done and you are giving it to the consumer) just validates that everything in DB is fine -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+        <property name="hibernate.default_schema">public</property>
+
+        <!-- List of POJO classes you want to map into tables in your DB -->
+        <mapping class="com.revature.models.Pokemon"/>
+        <mapping class="com.revature.models.Ability"/>
+        <mapping class="com.revature.models.PokeStorage"/>
+    </session-factory>
+</hibernate-configuration>
