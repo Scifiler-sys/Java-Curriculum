@@ -18,6 +18,5 @@ public class DirectServlet extends HttpServlet{
 		resp.setContentType("application/json");
 		
 		resp.getWriter().write("{\n\"name\":\"Stephen\", \n\"type\":\"Trainer\"\n}");
-		
 	}
 }

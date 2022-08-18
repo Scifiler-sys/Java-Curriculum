@@ -2,18 +2,47 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
+<!--
+
+ Web.xml is almost similar to our pom.xml 
+ Instead of declaring the dependency that our project needs,
+ Web.xml will declare what servlets this application will be utilizing
+ Essentially web.xml will help route whatever the end client wants to the appropriate servlet/html document
+ 
+ -->
+
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
-  <!--  -->
+  <!-- Routes the end client to our index.html to display on their web browser -->
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- In the event that the user gets a 404 http status code response, go ahead and server this html document-->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/error.html</location>
+  </error-page>
+  
+  <!-- 
+  This is a servlet that our application will utilize
+  - It needs some sort of name for this servlet
+  - It needs the actual package location of this servlet class
+   -->
   <servlet>
   	<servlet-name>DirectServe</servlet-name>
   	<servlet-class>com.revature.servlets.DirectServlet</servlet-class>
   </servlet>
   
+  <!-- 
+  What the end user needs to put on their URL to access this specific servlet 
+  - It needs the servlet name that it is suppose to route to
+  - It needs the endpoint the user needs to input on their url to access this servlet
+  -->
   <servlet-mapping>
   	<servlet-name>DirectServe</servlet-name>
-  	<url-pattern>/dir</url-pattern>
+  	<url-pattern>/dir</url-pattern>  
   </servlet-mapping>
   
 </web-app>

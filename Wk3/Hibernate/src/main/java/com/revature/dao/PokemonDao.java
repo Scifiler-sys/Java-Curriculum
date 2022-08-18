@@ -39,7 +39,7 @@ public class PokemonDao {
         // commits the transaction
         tx.commit();
 
-        //Return the auto generated PK
+        // Return the auto generated PK
         return primarykey;
     }
 
