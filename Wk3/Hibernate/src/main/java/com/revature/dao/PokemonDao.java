@@ -43,6 +43,16 @@ public class PokemonDao {
         return primarykey;
     }
 
+    public Pokemon getById(int id){
+        Session ses = HibernateUtil.getSession();
+
+        Transaction tx = ses.beginTransaction();
+
+        Pokemon found = ses.get(Pokemon.class, id);
+
+        return found;
+    }
+
     public List<Pokemon> loadAllData(){
         //Grabs our session
         Session ses = HibernateUtil.getSession();
