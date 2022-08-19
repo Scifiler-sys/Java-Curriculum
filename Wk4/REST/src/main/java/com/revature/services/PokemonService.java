@@ -39,11 +39,27 @@ public class PokemonService {
     }
 
     public Pokemon getPokemonById(int Id){
+        
         Optional<Pokemon> foundPoke = getAllPokemon().stream()
                 .filter(poke -> poke.getId() == Id)
                 .findFirst();
 
-        return foundPoke.get();
+        if (foundPoke.isPresent()) {
+            return foundPoke.get();
+        }
+        else {
+            
+            Pokemon noPoke = new Pokemon();
+            noPoke.setName("No pokemon was found");
+
+            //We could've just returned a null but... that usually is very error-prone
+            //So another way is just making a pokemon obj but stating that it isn't a pokemon
+            return noPoke;
+        }
     }
 
+    public Pokemon addPokemon(Pokemon poke){
+        return pokedao.addInstance(poke);
+    }
+    
 }

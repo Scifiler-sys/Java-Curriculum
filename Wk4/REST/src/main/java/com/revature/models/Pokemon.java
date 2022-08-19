@@ -51,5 +51,9 @@ public class Pokemon {
         this.damage = damage;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Pokemon [damage=" + damage + ", health=" + health + ", id=" + id + ", level=" + level + ", name=" + name
+                + "]";
+    }
 }
