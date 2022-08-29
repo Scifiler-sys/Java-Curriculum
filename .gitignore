@@ -6,4 +6,3 @@ Servers/
 
 apache*
 *.properties
-database.properties
