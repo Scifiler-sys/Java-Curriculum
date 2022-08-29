@@ -5,3 +5,4 @@ target/
 
 apache*
 application.properties
+database.properties

@@ -2,6 +2,10 @@ package com.revature;
 
 import java.util.Scanner;
 
+import com.revature.dao.PokemonDao;
+import com.revature.dao.Repository;
+import com.revature.models.Pokemon;
+import com.revature.services.PokemonServ;
 import com.revature.ui.AddPokemon;
 import com.revature.ui.MainMenu;
 import com.revature.ui.Menu;
@@ -21,6 +25,10 @@ public class App
         Menu menu = new MainMenu();
         Scanner scan = new Scanner(System.in);
 
+        //Declaring our apps dependencies
+        Repository<Pokemon> pokemonDao = new PokemonDao();
+        PokemonServ pokemonServ = new PokemonServ(pokemonDao);
+
         while (isRunning) {
             //Clear the screen
             System.out.print("\033[H\033[2J");  
@@ -38,7 +46,7 @@ public class App
                     menu = new MainMenu();
                     break;
                 case AddPokemon:
-                    menu = new AddPokemon();
+                    menu = new AddPokemon(pokemonServ);
                     break;
                 case Exit:
                     isRunning = false;

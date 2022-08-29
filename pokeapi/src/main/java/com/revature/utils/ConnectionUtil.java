@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -29,18 +30,21 @@ public class ConnectionUtil {
         String url, user, pass;
 
         try {
-            props.load(new FileReader("C:\\Users\\Stephen - Work\\Documents\\Revature\\Java\\pokeapi\\src\\main\\resources\\application.properties"));
+            Class.forName("org.postgresql.Driver");
+
+            props.load(new FileReader("C:\\Users\\StephenPagdilao\\Documents\\Revature\\Java\\Java Enterprise\\pokeapi\\src\\main\\resources\\database.properties"));
         
             url = props.getProperty("url");
+            user = props.getProperty("user");
+            pass = props.getProperty("pass");
+
+            con = DriverManager.getConnection(url, user, pass);
             
             
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        } 
 
         return con;
     }

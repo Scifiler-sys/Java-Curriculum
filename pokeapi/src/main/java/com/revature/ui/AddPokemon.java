@@ -3,8 +3,18 @@ package com.revature.ui;
 import java.util.Scanner;
 
 import com.revature.models.Pokemon;
+import com.revature.services.PokemonServ;
 
 public class AddPokemon implements Menu{
+
+    //=========== Dependency Injection ===========
+    private PokemonServ pokeserv;
+
+    public AddPokemon(PokemonServ pokeserv) {
+        this.pokeserv = pokeserv;
+    }
+    //============================================
+
 
     public static Pokemon currentPokemon = new Pokemon();
 
@@ -31,6 +41,14 @@ public class AddPokemon implements Menu{
         switch (userInput) {
             case "0":
                 return MenuType.MainMenu;
+            case "1":
+                this.pokeserv.addPokemon(this.currentPokemon);
+                this.currentPokemon = new Pokemon();
+
+                System.out.println("Pokemon Creation Successful!");
+                System.out.println("Please press Enter to continue");
+                scan.nextLine();
+                return MenuType.MainMenu;
             case "2":
                 int dmg = scan.nextInt();
                 scan.nextLine();
@@ -53,8 +71,7 @@ public class AddPokemon implements Menu{
                 String name = scan.nextLine();
 
                 currentPokemon.setName(name);
-            case "6":
-                //Implement Service to add data
+                return MenuType.AddPokemon;
             default:
                 wrongChoice(scan);
                 return MenuType.AddPokemon;
