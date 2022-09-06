@@ -67,6 +67,7 @@
 
 ## CSS Grid
 * A way to put elements in a grid like system
+* https://css-tricks.com/snippets/css/complete-guide-grid/
 
 # Responsive Web Design
 * Making your elements not have rigid in size but changes its size based on the viewport
