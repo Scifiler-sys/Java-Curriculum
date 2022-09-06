@@ -1,0 +1,7 @@
+/* External css is a completely different file with .css extension */
+/* Used to apply universal theme to your website since you can reference the same .css file in multiple .html files */
+
+.make-big {
+    font-size: 40px;
+    font-weight: bold;
+}
