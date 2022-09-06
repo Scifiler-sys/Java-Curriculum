@@ -62,6 +62,12 @@
     * Class selector will have the third
     * Element selector will have the last
 
+## CSS Box Model
+* A way to enlarge/separate/resize your elements into the right size and spacing
+
+## CSS Grid
+* A way to put elements in a grid like system
+
 # Responsive Web Design
 * Making your elements not have rigid in size but changes its size based on the viewport
     * Viewport is just how big the window of the browser is (small for phones, big for computers)

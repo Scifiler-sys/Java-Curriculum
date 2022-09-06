@@ -18,6 +18,10 @@
 
     <!-- This is an example of internal css -->
     <style>
+
+        body {
+            font-size: 20px;
+        }
         /* Naming convention for CSS is using hypens */
 
         /* This is an id selector */
@@ -33,6 +37,56 @@
         /* This is a element selector*/
         p {
             color: brown;
+        }
+
+        
+        /* This is a rule/ruleset */
+        .box-model{
+            /* These are a bunch of declarations */
+            border: 2px solid black;
+            width: 20vw;
+            height: 20vh;
+            
+            /* Centering the text */
+            padding-top: 8vh;
+            text-align: center;
+
+            /* Adding spacing */
+            margin-inline: 35%;
+            margin-block:5%;
+        }
+
+        
+        .grid {
+            margin: 5%;
+            /* Important declaration to start grid */
+            display:grid;
+
+            /* fr is a grid only unit that spaces our elements evenly */
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr;
+            
+            gap: 20px;
+        }
+
+        .box {
+            position: relative;
+            border: 2px solid black;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+
+            padding: 25%;
+            align-items: center;
+            text-align: center;
+        }
+
+        .box-third {
+            grid-row: span 2;
+        }
+
+        .box-fourth {
+            grid-column: span 2;
         }
     </style>
 </head>
@@ -133,35 +187,22 @@
 
     <p class="make-big">External css being used</p>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Money</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Stephen</td>
-                <td>Otto</td>
-                <td>4850</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>480</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>-8472</td>
-            </tr>
-        </tbody>
-    </table>
+    <h3>Box Model</h3>
+    <div class="box-model">This is content</div>
+
+    <h3>CSS Grid</h3>
+    <p>A way to design/structure your webpage even further</p>
+
+    <div class="grid">
+        
+        <div class="box">box 1</div>
+        
+        <div class="box">box 2</div>
+        
+        <div class="box box-third">box 3</div>
+
+        <div class="box box-fourth">box 4</div>
+    </div>
 </body>
 
 </html>
