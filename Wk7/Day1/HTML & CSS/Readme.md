@@ -74,5 +74,3 @@
 * Useful to accomodate for every devices out there that might access your website
 * We will leverage Bootstrap libraries for pre-made css files to implement this design
     * Click [here](https://getbootstrap.com/docs/5.1/getting-started/introduction/) for Bootstrap documentation
-
-# JS
