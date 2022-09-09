@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import FunctionalComponent from './components/FunctionComponent';
+import ClassComponent from './components/ClassComponent';
+import PokemonBox from './components/PokemonComponent/PokemonBox';
 
 /*
   This is what a component looks like and how we will make ours as well
@@ -58,6 +61,11 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <FunctionalComponent />
+      <ClassComponent />
+
+      <PokemonBox />
     </div>
   );
 }
