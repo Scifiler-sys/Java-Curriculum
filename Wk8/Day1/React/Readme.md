@@ -11,6 +11,12 @@
     * Disadvantages:
         * Web crawlers will have a hard time finding specific section of your website (Mostly cause JS is the one that is giving HTML docs)
         * Uses a lot of resources, your computer is doing the majority of the "thinking" to render the website to your browser
+* It is component-based
+    * Don't with having one HTML document that will specify one web page in your website.
+    * Instead, they modularize a website a bit more further
+    * A components are the building blocks that makes your entire website
+    * This was made so you can reuse multiple components in different places but displays things a little bit different
+* They embraced a philosophy in which you should have everything in one place and not in different files
 
 ## Library vs. a Framework
 * Easy distinction is a library is a lot less functions/features compared to a framework
@@ -19,3 +25,17 @@
     * In React, you will see that we still have to manually setup a lot of things just to use it
         * Heck, React by default doesn't have routing, we need to get another dependency just to do that
 
+## What is a component?
+* It is a single UI/graphic that is independent and reusable.
+* You can think of puzzle pieces, by itself it has a piece of a picture, together with other puzzle pieces you get an image
+* TLDR: you make components to reuse them in your website and they are a tiny piece of your app that makes up a whole page
+* Class Component - They are components made by creating a class and extending React.Component
+* Function Component - They are components made by creating a function
+
+## JSX
+* An extension of JavaScript.
+* It gives us all the power to combine both HTMl and JS and have them pass/use data pretty easily
+* This goes back to the philosophy React believes in, which everything should be at one place
+* Less known reasons why use JSX:
+    * We heavily use JavaScript to render our webpages and that comes with some major risks with JS injection attacks (Also known as XSS). Using JSX prevents such attacks.
+* Ex: Storing an HTML element into a JS variable, using JS variable to display on a HTML element
