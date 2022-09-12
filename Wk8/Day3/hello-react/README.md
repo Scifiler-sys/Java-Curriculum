@@ -22,9 +22,6 @@
 
 ## Props
 * Props are a great way to pass information into a component to be used/displayed
-    * Essentially passing from **parent to child** component
-    * You can pass from child to parent using callback functions
-        * https://www.pluralsight.com/guides/react-communicating-between-components
 * You specify props within the parameter of the function component
 * Whenever you use that component, you must provide the necesary information as well (UNLESS IT IS OPTIONAL!)
 * A very big part of React to make components reusable
@@ -63,9 +60,3 @@
 
 ## Conditional Rendering
 * When you want to render/display certain things in React based on well a condition
-
-## Lists and Keys
-* Whenever you display list of items, React requires you to add a key
-* It is important for React so it can uniquely identify that specific HTML element in the event that it needs to dynamically change it
-* It is massive optimization hit if you don't add keys when you map things in React
-* Just another point as to why we add unique identifiers in pretty much everything in our database
