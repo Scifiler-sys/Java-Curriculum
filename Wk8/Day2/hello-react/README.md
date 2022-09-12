@@ -20,16 +20,11 @@
 * Depending on which you pick, the syntax will look different on how you apply certain features in React
     * Ex: Doing props in function component looks very different class component
 
-## Props and State
-### Props
+## Props
 * Props are a great way to pass information into a component to be used/displayed
 * You specify props within the parameter of the function component
 * Whenever you use that component, you must provide the necesary information as well (UNLESS IT IS OPTIONAL!)
 * A very big part of React to make components reusable
-
-## Rendering Basics?
-
-## Virtual DOM?
 
 ## Component Lifecycle
 * Like with anything, a component have a lifespan. It will live and it will die. In coding, this means we have the power to control a component life (messed up I know). 
@@ -50,3 +45,19 @@
     * With class components it took more boilerplate code to do it
 * TLDR, if you have a dynamically changing information in your webpage use **HOOKS** or else they will **NOT** display the changes
 
+## States
+* While props are used to transfer information into the component to use
+* States are used within the component to re-render your web page with dynamically changing variables/information
+* States are **immutable**, you must use the useState method to change the information and have it reflect
+
+## Virtual DOM
+* Whenever we interact with the "DOM" in React using React specific things such as hooks or jsx, we are actually messing with a virtual DOM
+* Yes there is two DOMs in React
+* React will looking into the virtual DOM and compare it with the real HTML DOM, based on the difference between the two, it will only change the real DOM on the differences
+* This is to optimize the process of changing your real DOM by specifically targetting certain sections to it and changing it
+* This syncing process is called **reconciliation**
+* TLDR: this is why we don't do document.querySelector() anymore, React will take care of all the real DOM manipulation
+
+## Conditional Rendering
+* When you want to render/display certain things in React based on well a condition
+* 

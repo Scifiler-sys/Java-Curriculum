@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import PokemonList from './components/PokemonList/PokemonList';
 
 /*
   Index.tsx is your entry point of your website. 
@@ -24,7 +25,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* This is a component called App which came from App.tsx */}
-    <App />
+    {/* <App /> */}
+    <PokemonList />
   </React.StrictMode>
 );
 

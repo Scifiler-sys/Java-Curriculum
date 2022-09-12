@@ -120,6 +120,14 @@ function App() {
 
           console.log(list) // [2, 8, 10, 12]
 
+          Something problematic with React when it comes to displaying lists using map method
+            - You must supply keys for list items
+            - Generally just using some uniquely identifieable property in the list will be perfect
+            - Why does React need this? To help it identify the specific HTML elements and down the line also dynamically change them
+              In the event you change the list information
+          
+          Here are scenarios that React gives you as to why you should add keys
+          https://reactjs.org/docs/reconciliation.html#recursing-on-children
 
         */}
         {
