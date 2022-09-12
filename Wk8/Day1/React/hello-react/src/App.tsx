@@ -2,12 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 /*
   This is what a component looks like and how we will make ours as well
 
   The name of a component is determined by the name of the function
   hence in index.tsx, we used <App /> to reference this component
-
+  
 */
 
 function App() {

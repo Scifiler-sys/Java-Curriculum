@@ -12,7 +12,6 @@
     * Ex: Clicking buttons changes the content dynamically
 * It is not both functional and object-oriented programming language
     * functional means we can make functions!
-* We are currently with version ECMAScript 6 (The version that changed a lot of things)
 * Another very fun and different thing is Javascript can be run in multiple ways
     * Java can only run in JVM
     * This can run on Chrome v8, Firefox SpiderMonkey, Nodejs (although this uses Chrome V8)
@@ -76,17 +75,17 @@
     }
     //Anything outside cannot see that x variable
     ```
-* Function
+* Function scope
     * Each function you create is a new scope
     * Kinda like methods in C# in that variables created in the function only stays in that function
-* Global
+* Function scope
     * Can be access anywhere in JS
     * Var keyword that will give variable a global scope
     ```JS
     {
         var x = 2;
     }
-    //Anything outside this block scope still has access to x because it is global
+    //Anything outside this block scope still has access to x because it is functional scope
     ```
 * let keyword limits the scope of the variable depending on where it was declared
     * Mostly use "let" to try your best to avoid conflicting variable names

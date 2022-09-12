@@ -6,6 +6,7 @@
         - tsc [TS filepath]
         - tsc -w [TS filepath] - will auto transpile given there is a change in the file
         - tsc -w es[2016] [TS filepath] - will auto transpile and use EC6
+
 */
 
 console.log("===Variables===");

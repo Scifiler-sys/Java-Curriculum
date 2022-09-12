@@ -1,6 +1,7 @@
 package com.revature.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 
 import com.revature.dao.PokemonDao;
 import com.revature.models.Pokemon;
@@ -32,7 +33,9 @@ public class AppConfig {
         return new PokemonService();
     }
 
+
     @Bean(name="Pokemon")
+    @Scope("prototype")
     public Pokemon getPokemon(){
         return new Pokemon();
     }

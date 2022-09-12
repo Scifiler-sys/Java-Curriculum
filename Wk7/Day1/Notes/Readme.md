@@ -6,46 +6,38 @@
 * We are currently on version HTML 5
 
 ## HTML elements
-* They are basic graphical units that will display or structure your web page
-
-## HTML Tags
-* Don't confuse with HTMl elements although they are used synonymously online
-* HTML element is the actual unit while HTML tag is used to refer to that HTML element
-* Ex: paragraph HTML element will display long text in your website and you use `<p> <\p>` HTML tag to display it
-
-## Inline vs Block element
-* Inline elements will display the two HTML element in the same line (or side by side)
-* Block elements will display the two HTML elements in different line
-* Ex: println() will display text line by line which is the same for block elements, print() will display text in the same line which is the same for inline elements
-
-## HTML semantic elements
-* A new edition to HTMl5 that confused a bunch of people or not even bother using it
+* They are a basic graphical unit of something you want to display/structure on your web page
+## HTML tags
+* They are what you write in an HTML file to reference the HTML element you want to add
+* Ex: I want to add an HTML paragraph element by typing ``<p></p>`` HTML tag
+## Inline vs. Block elements
+* Block elements will add a new line every time you create that element
+* Inline element will not add a new line when you create that element
+## Semantic tags
 * Whole purpose of semantic tags is to express a clearly defined purpose of a certain section of your HTML file
 * Unlike a div or span element that tells you absolutely nothing of what is going to be inside the contents
-* TLDR a proper way to "structure" your HTML file so the next person will understand more clearly what you are doing
 * Ex: table, article, form, etc.
-
 ## HTML attributes
 * They are used to provide extra information that the tag can use
+* Some changes the behavior or extends the functionality of the tag
 * Ex: img tag using src attribute to find a specific image to display
 
 # CSS
 * Cascading Style Sheets
-    * Cascading is in the name because it uses a cascading algorithm to determine what style it should apple (more on this later)
+    * Cascading is in the name because the styling is determined by cascading down from one source to another source to another source and so on...
 * A way to stop making your website looking like it came from the 90s
 
 ## CSS Selectors
 * Before applying styles everywhere, we need a way to select specific or group of HTMl elements first so we give them their own type of look
 * There are three basic fundamental selectors we should keep in mind:
-1. Id selector - When you want to select one element using the id attribute
+1. Element selector - When you want to select multiple elements of the same tag
 2. Class selector - When you want to select multiple elements of differing tag by using the class attribute
-3. Element selector - When you want to select multiple elements of the same tag
+3. Id selector - When you want to select one elements using the id attribute
 
 ## Different ways to include CSS
 * Inline CSS
     * Applies CSS to a single element
     * It uses the style attribute
-    * Has the higest priority
 * Internal CSS
     * Applies CSS by using the style tag inside of a HTML doc
     * Used to apply multiple css to multiple elements
@@ -55,21 +47,16 @@
     * Used to apply multiple css to multiple elements in multiple HTML docs
         * So useful to create a universal theme of your website
 
+## Box Model
+* Great for us to move elements around the page to a specific location that we want
+* From inner to outer:
+    Content > Padding > Border > Margin
+* I would look into css flexbox to really help with positioning things in your website. Unfortunately, we don't have to cover it but it is really useful.
+    * https://css-tricks.com/snippets/css/a-guide-to-flexbox
+
 ## CSS Specificity
-* Key thing is the term "Specificity"
-* This will determine what style we should apply to a particular element because sometimes some styling will collide with another
-* General rule (but it definitely gets more complicated than this): 
-    * Inline css will have a very high priority
-    * Id selector will have the second priority
-    * Class selector will have the third
-    * Element selector will have the last
-
-## CSS Box Model
-* A way to enlarge/separate/resize your elements into the right size and spacing
-
-## CSS Grid
-* A way to put elements in a grid like system
-* https://css-tricks.com/snippets/css/complete-guide-grid/
+* When it gets murky on what element to choose to apply the css to
+* 
 
 # Responsive Web Design
 * Making your elements not have rigid in size but changes its size based on the viewport
@@ -77,3 +64,4 @@
 * Useful to accomodate for every devices out there that might access your website
 * We will leverage Bootstrap libraries for pre-made css files to implement this design
     * Click [here](https://getbootstrap.com/docs/5.1/getting-started/introduction/) for Bootstrap documentation
+

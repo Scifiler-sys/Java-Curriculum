@@ -1,3 +1,18 @@
+## What is a component?
+* It is a single UI/graphic that is independent and reusable.
+* You can think of puzzle pieces, by itself it has a piece of a picture, together with other puzzle pieces you get an image
+* TLDR: you make components to reuse them in your website and they are a tiny piece of your app that makes up a whole page
+* Class Component - They are components made by creating a class and extending React.Component
+* Function Component - They are components made by creating a function
+
+## JSX
+* An extension of JavaScript.
+* It gives us all the power to combine both HTMl and JS and have them pass/use data pretty easily
+* This goes back to the philosophy React believes in, which everything should be at one place
+* Less known reasons why use JSX:
+    * We heavily use JavaScript to render our webpages and that comes with some major risks with JS injection attacks (Also known as XSS). Using JSX prevents such attacks.
+* Ex: Storing an HTML element into a JS variable, using JS variable to display on a HTML element
+
 ## Class vs Functional components
 * Class components are just component made by using a class
 * Function Components are components that are made using functions
