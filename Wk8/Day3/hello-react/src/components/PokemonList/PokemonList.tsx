@@ -120,10 +120,10 @@ function PokemonList() {
 
         // console.log(listOfPoke);
 
-        // setListOfPoke([newPokemon, ...listOfPoke]);
+        setListOfPoke([...listOfPoke, newPokemon]);
 
         //Logic to add pokemon to our database
-        axios.post<IPokemon>("")
+        axios.post<IPokemon>("http://smresteb-env.eba-u2i9uhvs.us-east-1.elasticbeanstalk.com/rest/addpokemon", newPokemon);
     }
 }
 
