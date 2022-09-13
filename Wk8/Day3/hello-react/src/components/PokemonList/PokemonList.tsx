@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { IPokemon } from "../../models/PokemonModel";
 import PokemonBox from "../PokemonBox/PokemonBox";
 import "./PokemonList.css";
@@ -12,29 +13,40 @@ function PokemonList() {
         name:"MissingNo"
     });
 
-    const [listOfPoke, setListOfPoke] = useState<IPokemon[]>([
-        {
-          damage: 80,
-          health: 100,
-          img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-          level: 32,
-          name: "Bulbasaur"
-        },
-        {
-          damage: 70,
-          health: 120,
-          img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
-          level: 67,
-          name: "Mew"
-        },
-        {
-          damage: 89,
-          health:56,
-          img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/813.png",
-          level: 90,
-          name: "Scorbunny"
-        }
-      ]);
+    /**
+     * As we talked about numerous times, having hard coded values won't get you very far
+     * 
+     * So let us transform our PokemonList component to grab information from our api instead using Axios
+     * 
+     * However, to fully utilize grabbing stuff from the network takes a new level of hook required to update our website accordingly
+     * this is the useEffect() another hook introduced in React for functional components
+     *  - Essentially, it will run that function whenever an "update" gets detected by React
+     *  - It will also run when you first initializes your component (probably the most useful case as to why we want to use it for our api)
+     *  - One of those "updates", whenever the DOM changes
+     *  
+     * So main idea, we will have a blank listOfPokemon that needs some extra steps to grab its data but we want this data to be displayed accordingly
+     * Grabbing information from the network takes time, we want to use useEffect() to change our page the moment it gets a response, 
+     * go ahead and update my website with the change
+     * 
+     * TLDR: If the creation logic to grab data and setting it as a default value for a state is complex, use useEffect()
+     *
+     */
+
+    const [listOfPoke, setListOfPoke] = useState<IPokemon[]>([]);
+
+    useEffect(() => {
+
+        //get() method uses HTTP GET Verb
+        axios.get<IPokemon[]>("http://smresteb-env.eba-u2i9uhvs.us-east-1.elasticbeanstalk.com/rest/allpokemon")
+            .then(response => {
+
+                //We are grabbing information from our own API!!
+                //Unfortunately, you need some extra configuration from your backend team to allow frontend team to have access to your resource
+                console.log(response);
+                setListOfPoke(response.data);
+            });
+
+    }, []); //Empty array is for values that useEffect should look for if in the event that value changes, go ahead and re-run this function
 
     return <div>
         <h3>Add Pokemon</h3>
@@ -56,7 +68,7 @@ function PokemonList() {
         <div className="grid-poke-list">
             {
                 listOfPoke?.map(poke => {
-                    return <PokemonBox key={poke.name} {...poke}/>
+                    return <PokemonBox key={poke.id} {...poke}/>
                 })
             }
         </div>
@@ -106,9 +118,12 @@ function PokemonList() {
     function onSubmit(event:React.FormEvent<HTMLFormElement>){
         event.preventDefault();
 
-        console.log(listOfPoke);
+        // console.log(listOfPoke);
 
-        setListOfPoke([newPokemon, ...listOfPoke]);
+        // setListOfPoke([newPokemon, ...listOfPoke]);
+
+        //Logic to add pokemon to our database
+        axios.post<IPokemon>("")
     }
 }
 
