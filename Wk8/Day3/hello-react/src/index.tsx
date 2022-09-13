@@ -4,29 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import PokemonList from './components/PokemonList/PokemonList';
-
-/*
-  Index.tsx is your entry point of your website. 
-  Anything in here is what will be display
-
-  Since React is SPA, this is going to the main HTML page that will be serve first
-*/
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
-//==============
-//You can see how React selects the div element with an id of root from our index.html
-//It will then append our componenets to that div using JS
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-//==============
 
-//This section is responsible for rendering our components in whatever order youw ant
 root.render(
   <React.StrictMode>
-    {/* This is a component called App which came from App.tsx */}
-    {/* <App /> */}
-    <PokemonList />
+
+    {/* BrowserRouter starts it */}
+    <BrowserRouter>
+
+      {/* This is all the different routes this app will have */}
+      <Routes>
+        {/* The individual routes that points to a specific component as well as what is the endpoint necesarry to access them */}
+        <Route path="/" element={<App />}/>
+        <Route path="/pokeList" element={<PokemonList />}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
