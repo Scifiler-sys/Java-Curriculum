@@ -5,6 +5,9 @@ import PokemonBox from "../PokemonBox/PokemonBox";
 import "./PokemonList.css";
 
 function PokemonList() {
+    //Must put the state to the common ancestry of all the child components
+    const [pokeNum, setPokeNum] = useState(0);
+
     const [newPokemon, setNewPoke] = useState<IPokemon>({
         damage:0,
         health:0,
@@ -48,6 +51,10 @@ function PokemonList() {
 
     }, []); //Empty array is for values that useEffect should look for if in the event that value changes, go ahead and re-run this function
 
+    function handleButtonClick() {
+        setPokeNum(pokeNum + 1);
+    }
+
     return <div>
         <h3>Add Pokemon</h3>
         <form className="grid" onSubmit={onSubmit}>
@@ -68,7 +75,7 @@ function PokemonList() {
         <div className="grid-poke-list">
             {
                 listOfPoke?.map(poke => {
-                    return <PokemonBox key={poke.id} {...poke}/>
+                    return <PokemonBox key={poke.id} {...poke} pokeNum={pokeNum} onButtonClick={handleButtonClick}/>
                 })
             }
         </div>

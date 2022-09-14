@@ -16,3 +16,10 @@
 * Make cool progress bars when getting packets from large information you are sending in the internet
 * For our case, it is just "easier" to type it out and less boilerplate code
     * It looks like Angular Httpclient tbh
+
+## Lifting State
+* This is when you "lifted" a state to a higher component so that all of the (peasant) child components can share a universal value
+    * You can think of it as like a singleton variable all child components will see
+* Child to Parent communcation is needed for the operation
+    * Since if one of the child components decided to change that universal value, then everyone else must follow
+* **You must put the state to the common ancestry of all the child components (Their parent basically)**

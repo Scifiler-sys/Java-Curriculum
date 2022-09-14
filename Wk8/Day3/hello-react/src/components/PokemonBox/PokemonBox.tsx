@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { IPokemon } from "../../models/PokemonModel";
 import "./PokemonBox.css"
 
@@ -19,7 +20,11 @@ import "./PokemonBox.css"
 //I.E. put in the info that needs to be dynamically changed
 
 
-function PokemonBox(props: IPokemon) {
+function PokemonBox(props: any) {
+
+    // If you want a universal value that all child components will share, you must put it on their common ancestry (their parent)
+    // const [pokeNum, setPokeNum] = useState(0);
+
     return <div className="box">
         {/* 
         Harded coded way which is baaad
@@ -29,12 +34,13 @@ function PokemonBox(props: IPokemon) {
         <p>Health: 150</p>
         <p>Damage: 267</p> 
         */}
-
         <img src={props.img}/>
         <h4>{props.name}</h4>
+        <p>{props.pokeNum}</p>
         <p>Level: {props.level}</p>
         <p>Health: {props.health}</p>
         <p>Damage: {props.damage}</p>
+        <button onClick={() => props.onButtonClick()}>+</button>
     </div>;
 }
 
