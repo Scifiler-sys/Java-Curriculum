@@ -6,6 +6,7 @@
     * Kinda like one client-side database for your app
     * Your components will have access to it and have all the capabilities to change its information as well
     * All other components listening to the same state will also have the reflected change
+* To install `npm install @reduxjs/toolkit react-redux`
 
 ## React Redux Store
 * The centralized place for all of your state information needs
