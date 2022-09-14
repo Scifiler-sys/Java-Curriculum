@@ -23,3 +23,8 @@
 * Child to Parent communcation is needed for the operation
     * Since if one of the child components decided to change that universal value, then everyone else must follow
 * **You must put the state to the common ancestry of all the child components (Their parent basically)**
+
+## React State management
+* As you notice, you will be using a ton of states with hooks since this is the main way React can store information, pass information, and also dynamically change your website whenever a state changes
+* But let's really talk how States' are being managed in React
+* Basically you have to go through the entire tree to pass information around which really sucks
