@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import PokemonList from './components/PokemonList/PokemonList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NavBar from './shared/NavBar/NavBar';
 
 
 const root = ReactDOM.createRoot(
@@ -13,9 +14,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-
     {/* BrowserRouter starts it */}
     <BrowserRouter>
+    <NavBar />
 
       {/* This is all the different routes this app will have */}
       <Routes>

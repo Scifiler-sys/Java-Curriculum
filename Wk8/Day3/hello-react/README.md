@@ -15,3 +15,4 @@
 * Has protection for XSRF (Cross-site Request Forgery)
 * Make cool progress bars when getting packets from large information you are sending in the internet
 * For our case, it is just "easier" to type it out and less boilerplate code
+    * It looks like Angular Httpclient tbh
