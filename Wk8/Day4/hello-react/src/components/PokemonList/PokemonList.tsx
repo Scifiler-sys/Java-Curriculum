@@ -1,10 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { IPokemon } from "../../models/PokemonModel";
+import { useAppSelector } from "../../shared/Redux/hooks";
+import { selectTrainer } from "../Login/TrainerSlice";
 import PokemonBox from "../PokemonBox/PokemonBox";
 import "./PokemonList.css";
 
 function PokemonList() {
+    const trainer = useAppSelector(selectTrainer);
+
     //Must put the state to the common ancestry of all the child components
     const [pokeNum, setPokeNum] = useState(0);
 
@@ -40,14 +44,16 @@ function PokemonList() {
     useEffect(() => {
 
         //get() method uses HTTP GET Verb
-        axios.get<IPokemon[]>("http://smresteb-env.eba-u2i9uhvs.us-east-1.elasticbeanstalk.com/rest/allpokemon")
-            .then(response => {
+        // axios.get<IPokemon[]>("http://smresteb-env.eba-u2i9uhvs.us-east-1.elasticbeanstalk.com/rest/allpokemon")
+        //     .then(response => {
 
-                //We are grabbing information from our own API!!
-                //Unfortunately, you need some extra configuration from your backend team to allow frontend team to have access to your resource
-                console.log(response);
-                setListOfPoke(response.data);
-            });
+        //         //We are grabbing information from our own API!!
+        //         //Unfortunately, you need some extra configuration from your backend team to allow frontend team to have access to your resource
+        //         console.log(response);
+        //         setListOfPoke(response.data);
+        //     });
+
+        setListOfPoke(trainer.listOfPokemon);
 
     }, []); //Empty array is for values that useEffect should look for if in the event that value changes, go ahead and re-run this function
 

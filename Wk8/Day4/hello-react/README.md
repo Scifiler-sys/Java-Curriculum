@@ -9,7 +9,13 @@
 * To install `npm install @reduxjs/toolkit react-redux`
 ### Setting up
 * npm install
+* Create store
 * Configure index.tsx to add provider
+* Create hook
+* Create slicer
+* Add slicer to store
+* use custom hooks properly
+
 
 ## React Redux Store
 * The centralized place for all of your state information needs

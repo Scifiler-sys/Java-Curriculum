@@ -1,8 +1,8 @@
 import { IPokemon } from "./PokemonModel";
 
 export interface ITrainer {
-    trainid:number,
-    tname:string,
-    totalBadges:number,
+    id:number,
+    name:string,
+    totalBadge:number,
     listOfPokemon:IPokemon[]
 }

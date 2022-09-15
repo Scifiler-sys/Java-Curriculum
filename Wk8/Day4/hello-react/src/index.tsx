@@ -7,7 +7,7 @@ import PokemonList from './components/PokemonList/PokemonList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './shared/NavBar/NavBar';
 import { Provider } from 'react-redux';
-import store from './shared/Redux/store';
+import {store} from './shared/Redux/store';
 import Login from './components/Login/Login';
 
 

@@ -1,32 +1,36 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { ITrainer } from "../../models/TrainerModel";
+import { useAppDispatch, useAppSelector } from "../../shared/Redux/hooks";
 import "./Login.css";
+import { selectTrainer, setTrainer } from "./TrainerSlice";
 
 function Login() {
-    const [currentUser, setCurrentUser] = useState<ITrainer>({
-        tname: "",
-        totalBadges: 0,
-        trainid: 0,
-        listOfPokemon: []
-    });
+    
+    const trainer = useAppSelector(selectTrainer); //We are grabbing trainer slice information from the store
 
-    function updateTrainerId(e:any) {
-        currentUser.trainid = e.target.value;
+    const dispatch = useAppDispatch(); //Setting our dispatch, dispath is responsible for sending actions with or without payloads
+    const [trainerId, setTrainerId] = useState(0);
 
-        setCurrentUser(currentUser);
-        console.log(currentUser.trainid);
+    function updateTrainerId(e:React.ChangeEvent<HTMLInputElement>) {
+
+        setTrainerId(+e.target.value);
+        
+        // console.log(trainerId);
     }
 
     function onSubmit(e:React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        axios.get<ITrainer>(`http://smresteb-env.eba-u2i9uhvs.us-east-1.elasticbeanstalk.com/rest/getUserPokemon?id=${currentUser.trainid}`)
+        axios.get<ITrainer>(`http://smresteb-env.eba-u2i9uhvs.us-east-1.elasticbeanstalk.com/rest/getUserPokemon?id=${trainerId}`)
             .then(response => {
-                currentUser.listOfPokemon = response.data.listOfPokemon;
 
-                setCurrentUser(currentUser);
-                console.log(currentUser);
+                //We are telling redux dispatch to create an action w/ a payload of our current user
+                //and point it to the setTrainer reducer that will then mutate the state stored in our store
+                dispatch(setTrainer(response.data));
+
+                // console.log(trainer);
             });
     }
 
