@@ -26,6 +26,7 @@
     * You can pass from child to parent using callback functions
         * https://www.pluralsight.com/guides/react-communicating-between-components
 * You specify props within the parameter of the function component
+* It is read-only! You cannot change the information in props
 * Whenever you use that component, you must provide the necesary information as well (UNLESS IT IS OPTIONAL!)
 * A very big part of React to make components reusable
 
