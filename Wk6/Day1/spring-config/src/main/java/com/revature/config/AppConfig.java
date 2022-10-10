@@ -28,9 +28,9 @@ public class AppConfig {
         return new PokemonDao();
     }
 
-    @Bean
+    @Bean(name = "PokemonService")
     public PokemonService getPokemonService(){
-        return new PokemonService();
+        return new PokemonService(getPokemonDao());
     }
 
 
