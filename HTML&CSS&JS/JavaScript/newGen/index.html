@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro2JS</title>
+</head>
+<body>
+    <p id="changeme">Please change me to whatever you want!</p>
+    <button onclick="changeToHello()">Change to "Hello World"</button>
+
+    <button onclick="addNewElements()">Click me to add paragraph</button>
+    <div id="addme">
+
+    </div>
+
+    <ul id="list">
+        This is the parent Node of li
+        <li>Child Node 1</li>
+        <li>Child Node 2</li>
+        <li>Child Node 3</li>
+        <li>Child Node 4</li>
+        <li>Child Node 5</li>
+    </ul>
+    <button onclick="displayTheNodes()">Display the Nodes</button>
+
+    <h3>Bubbling Events</h3>
+    <p>Bubbling event means that it will execute other events from child to parent node</p>
+    <p>By default, JS will utilize Bubbling</p>
+    <div style="border: 2px solid black;" onclick="alert('div was clicked')">
+        div
+        <p style="border: 2px solid darkred;" onclick="alert('paragraph was clicked')">
+            paragraph
+            <span style="border: 2px solid cyan" onclick="alert('span was clicked')">
+                span
+            </span>
+        </p>
+    </div>
+
+    <h3>Capturing Events</h3>
+    <p>Capturing event means that it will execute other events from parent to child node</p>
+    <div id="capture" style="border: 2px solid black;">
+        div
+        <p style="border: 2px solid darkred;">
+            paragraph
+            <span style="border: 2px solid cyan">
+                span
+            </span>
+        </p>
+    </div>
+</body>
+<script>
+    //I am setting the onclick event on the div
+    let div = document.querySelector("#capture");
+
+    //First param, what event should it listen to
+    //Second param, give me a function that should execute if the event happen
+    //Third param, do you want capturing behavior?
+    div.addEventListener("click", () => alert('div was clicked'), true);
+
+    //Selecting the paragraph element by traversing through the DOM
+    console.log(div.childNodes);
+    div.childNodes[1].addEventListener("click", () => alert('p was clicked'), true);
+
+    //Selecting the span element by traversing through the DOM
+    console.log(div.childNodes[1].childNodes);
+    div.childNodes[1].childNodes[1].addEventListener("click", () => alert('span was clicked'), true);
+
+    /*
+        Yep this looks really ugly and that is how it is in JS
+    */
+
+    function changeToHello() {
+        //QuerySelector is one way to select HTML elements
+        //It will use CSS selectors to find certain elements
+        //My most preferred way to select elements since CSS selectors can get really advance to select elements
+        document.querySelector("#changeme").innerHTML = "Hello World";
+
+        //getElementBy...Id,Name,Tagname,etc.
+        //Another way to select an element from the DOM
+        //It is more specific but less options to select elements more advance compared to CSS selectors
+        document.getElementById("changeme").innerHTML = "Hello World2";
+
+        //Difference? not much not even in terms of performance
+        //It is just your preference as a coder which one you want to use
+    }
+
+    function addNewElements(){
+        //First step is we have to make the object version of the HTML element
+        let paragraph = document.createElement("p");
+        paragraph.innerHTML = "Yasin the Anime God";
+
+        //We need to place this paragraph somewhere in the DOM
+        //appendChild also exists and does the same operation with one tiny difference
+        //appendChild will only allow Objects to be added in
+        document.querySelector("#addme").append(paragraph);
+        document.querySelector('#addme').append("Jack the all mighty leader");
+
+        // document.querySelector('#addme').appendChild("Another way"); Will not work since it is a string
+
+        //As with adding, there is also removing
+        //removeChild(SomeElementYouWantRemoved) would be the method
+    }
+
+    function displayTheNodes() {
+        let list = document.querySelector("#list");
+
+        console.log(list.parentNode);
+        console.log(list.childNodes);
+    }
+
+    /*
+        There are a lot more ways to manipulate the DOM but they follow the same idea
+        You will most likely need to select an element
+        You will use some method that will change its state/behavior
+        
+        I won't go too much in detail with ways to traverse into a DOM
+        Mostly because React changes the game on how you can change the information of your DOM (it made it a lot easier and less repetitive)
+    */
+</script>
+</html>
