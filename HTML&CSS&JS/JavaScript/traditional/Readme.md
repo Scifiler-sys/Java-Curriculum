@@ -48,8 +48,8 @@
     * Some people say to use it because it makes looking at your code easier to read (you should see example of how JS used to implement class-like things using just functions (spoiler alert: it looks gross))
 * Has most of the OOP pillars we discussed and implements them easily except abstraction
 
-# JS HTML DOM
-* Allows JavaScript to specifically pick certain elements in the HTML and change/manipulate them somehow based on whatever function you created
+# HTML DOM
+* Allows JavaScript to specifically pick certain elements in the HTML and change/manipulate them based on whatever function you want
 * This is what makes JS a powerful tool to making your html page dynamically change based on whatever the user is doing
 
 # Introduction to sending and receiving data in JS
