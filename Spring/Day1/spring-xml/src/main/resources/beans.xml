@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="pokemonDao" class="com.revature.dao.PokemonDao"
+    init-method="someCustomInitBehavior"
+    destroy-method="someCustomDestroyBehavior">
+
+  </bean>
+
+  <bean id="pokemonService" class="com.revature.service.PokemonService">
+          <!-- Extra configuration required to tell Spring that this bean will rely on PokemonDao and IoC MUST give a pokemonDao object -->
+          <constructor-arg ref="pokemonDao"></constructor-arg>
+  </bean>
+
+  <bean id="pokemon" class="com.revature.model.Pokemon" scope="prototype">
+
+        <!-- Use constructor-args to give default value for your object -->
+        <!-- This is called Injecting primitives -->
+          <constructor-arg type="String" value="Pikachu"></constructor-arg>
+          <constructor-arg type="int" value="1"></constructor-arg>
+          <constructor-arg type="int" value="100"></constructor-arg>
+  </bean>
+
+  <!-- more bean definitions go here -->
+
+</beans>

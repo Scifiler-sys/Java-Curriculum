@@ -3,6 +3,9 @@
 * This is what makes JS a powerful tool to making your html page dynamically change based on whatever the user is doing
 * The main idea is that JS uses objects and functions as its way to interact while HTML uses elements to interact. So a DOM was made so Javascript will know how to interact with HTML since they have different architecture on how things are done
 
+# Bubbling Event
+* Where ever the event has started from (depending on what HTML element), it will bubble up and execute the parent element's event if there is one then it will execute the next parent element and so on and on...
+
 # Classes
 * As you know, templates for creating objects
 * Didn't use to exist which made things weird and divided some communities in JS
