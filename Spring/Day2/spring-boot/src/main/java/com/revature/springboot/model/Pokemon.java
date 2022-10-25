@@ -7,6 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
 /*
@@ -30,6 +34,7 @@ public @Data class Pokemon {
 
     public Pokemon() {
         this.name = "Pokemon not found";
+        this.pokemonBox = new PokemonBox();
     }
 
     public Pokemon(int pokeId) {

@@ -1,6 +1,7 @@
 package com.revature;
 
 import com.revature.config.AppConfig;
+import com.revature.dao.AbilityDao;
 import com.revature.model.Pokemon;
 import com.revature.service.AbilityService;
 import com.revature.service.PokemonService;
@@ -31,7 +32,6 @@ public class App
             System.out.println(poke1.getName());
 
             AbilityService abServ1 = container.getBean(AbilityService.class);
-            
 
         } catch (Exception e) {
             //TODO: handle exception

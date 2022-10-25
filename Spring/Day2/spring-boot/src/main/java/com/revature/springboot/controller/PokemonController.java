@@ -1,18 +1,18 @@
 package com.revature.springboot.controller;
 
-import java.lang.reflect.Method;
 import java.util.List;
 
 import com.revature.springboot.model.Pokemon;
 import com.revature.springboot.service.PokemonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/pokemon")
@@ -29,8 +29,8 @@ public class PokemonController {
     }
 
     //By default, adding something in the parameter will expect it to be JSON
-    @RequestMapping(method = RequestMethod.POST, value ="/add")
-    public Pokemon AddPokemon(Pokemon newPoke){
+    @RequestMapping(method = RequestMethod.POST, value = "/add")
+    public Pokemon AddPokemon(@RequestBody Pokemon newPoke){
         return pokeServ.addPokemon(newPoke);
     }
 
