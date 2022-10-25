@@ -84,3 +84,26 @@
 - Has everything BeanFactory has
 - Eagerly instantiates beans (It will create an object of the bean the moment you start the IoC)
 - **Provides Support For Annotation Configuring**
+
+## XML-based configuration
+* Utilizes a `beans.xml` file
+* Useful if you want a centralize information to have all your Bean configuration at
+* The older way of configuring Beans
+
+## Annotation-based configuration
+* It will heavily use annotation to declare and configure Beans
+* @Component - declares the class to be targeted by Spring so it can make a Bean out of it
+* @Scope - declares the scope of the Bean
+* @Autowire
+    * Can be attached to a setter, field, or constructor
+    * It will inject a Bean into the setter, field, or constructor
+    * The Bean have to exist to work
+* @Qualifier
+    * Does the same thing as @Autowire
+    * Needs one parameter that asks for the bean's name that it wants to inject
+    * So basically the more manual way compared to Autowire
+* @Bean
+    * Does the same thing as @Component
+    * A more manual way to create a Bean by supplying your own creation logic
+    * Must be used within a AppConfig class w/ @Configuration
+* @Configuration - declares the class to work the same as our beans.xml but in class format

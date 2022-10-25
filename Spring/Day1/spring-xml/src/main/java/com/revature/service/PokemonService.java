@@ -2,6 +2,8 @@ package com.revature.service;
 
 import com.revature.dao.PokemonDao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class PokemonService {
 
     //Pokemon Service now heavily depends on PokemonDao to actually do its job

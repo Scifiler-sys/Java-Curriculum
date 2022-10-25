@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    password: b1kw3dR2IDMFqLVWOB0ybj_m0qi6kRoF
+    url: jdbc:postgresql://salt.db.elephantsql.com:5432/xlrupwdj
+    username: xlrupwdj
+  jpa:
+    hibernate:
+      ddl-auto: create-drop #none, create-drop, validate, and update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 5050
+springdoc:
+  swagger-ui:
+    path: /swagger

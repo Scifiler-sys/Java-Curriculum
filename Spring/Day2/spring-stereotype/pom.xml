@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.revature</groupId>
-  <artifactId>spring-annotation</artifactId>
+  <artifactId>spring-stereotype</artifactId>
   <version>1.0</version>
 
-  <name>spring-annotation</name>
+  <name>spring-stereotype</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
