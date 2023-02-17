@@ -6,6 +6,8 @@ import ClassComponent from './components/ClassComponent';
 import PokemonBox from './components/PokemonBox/PokemonBox';
 import { IPokemon } from './models/PokemonModel';
 import Counter from './components/Counter/Counter';
+import ControlledComponent from './components/ControlledComponent';
+import UncontrolledComponent from './components/UncontrolledComponent';
 
 /*
   This is what a component looks like and how we will make ours as well
@@ -138,7 +140,8 @@ function App() {
       </div>
 
       <Counter />
-
+      <ControlledComponent/>
+        <UncontrolledComponent/>
     </div>
   );
 }

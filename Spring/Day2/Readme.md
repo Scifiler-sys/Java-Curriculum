@@ -24,12 +24,6 @@
 * @EqualAndHashCode - overrides and creates equals method and hashcode method
 * @Data - for models, it will generate both setter, getter, equals, hashcode, and toString for you
 
-# What's an ORM?
-* Stands for Object Relational Mapper
-* The whole point is to simplify the transition from a database to a Java object
-* It will create SQL queries for you, it will map the info coming in from the database into a Java object for you, it will handle connection for you, and so on.
-* An ORM will map information from the database to Java object and vice versa. 
-
 # Spring Boot
 * The easiest way to create a project and what 95% of tutorials you see out there uses
 * It is created to abstract almost all configuration required to get started and it is almost as simple as just creating the project and running it
@@ -39,6 +33,11 @@
     * Absolutely no code generation and no requirements for XML configuration (YAY)
     * Make an enterprise grade level project out of the box
 
+# What's an ORM?
+* Stands for Object Relational Mapper
+* The whole point is to simplify the transition from a database to a Java object
+* It will create SQL queries for you, it will map the info coming in from the database into a Java object for you, it will handle connection for you, and so on.
+* An ORM will map information from the database to Java object and vice versa. 
 # Spring Data
 * It is a specific section of Spring that is all about database communication
 * It gives you several tools to interact with a data source and also several choices to which one you want to utilize
