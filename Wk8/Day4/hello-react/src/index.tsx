@@ -9,6 +9,7 @@ import NavBar from './shared/NavBar/NavBar';
 import { Provider } from 'react-redux';
 import {store} from './shared/Redux/store';
 import Login from './components/Login/Login';
+import LifeCycleComponent from './components/Lifecycle/LifeCycleComponent';
 
 
 const root = ReactDOM.createRoot(
@@ -29,6 +30,7 @@ root.render(
           <Route path="/" element={<App />}/>
           <Route path="/pokeList" element={<PokemonList />}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/lifecycle" element={<LifeCycleComponent />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>
