@@ -1,3 +1,8 @@
+# Big Note
+* This is frontend so a lot of the concepts is usually shwon in the demo rather than just plan lecture notes
+* Ex: Dom manipulation - best to look at the demo of it rather than see it in notes
+* TLDR: if the topic is not listed here, then it is in my demos
+
 # JavaScript
 * Best way to make your website dynamically changed
 * Dynamic & weakly typed
